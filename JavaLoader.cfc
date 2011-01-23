@@ -5,7 +5,7 @@ component {
 
 	public any function init() {
 
-		variables.javaLoader = new src.JavaLoader([], true);
+		javaLoader = new src.JavaLoader([]);
 
 		return this;
 
@@ -27,11 +27,8 @@ component {
 		var i = "";
 
 		for (i = 1; i <= arrayLen(jars); i++) {
-
 			var file = createObject("java", "java.io.File").init(jars[i]);
-
 			urlClassLoader.addUrl(file.toURL());
-
 		}
 
 	}
